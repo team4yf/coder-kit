@@ -1,0 +1,68 @@
+html, body {
+  background-color: #eee;
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+}
+
+.header {
+  height: 1em;
+  background:rgb(28, 135, 177);
+}
+
+.footer {
+
+}
+
+.container {
+  margin: 1em auto;
+}
+@media screen and (max-width: 1024px) {
+  .container {
+    max-width: 760px;
+  }
+}
+
+
+.input, .input:active, .text, .text:active {
+  border: none;
+  background: none;
+  outline: none;
+  border-bottom: 3px solid rgb(28, 135, 177);
+  font: 1.2em;
+  line-height: 1.5em;
+}
+
+.text, .text:active{
+  border: 3px solid rgb(28, 135, 177);
+}
+
+.box{
+  display: -webkit-flex;
+  display: flex;
+}
+.inline-box{
+  display: inline-flex;
+}
+
+.item {
+  flex-grow: 0;
+}
+.input-group {
+  margin: 1em;
+}
+.input-group .label{
+  -moz-box-flex:1.0; /* Firefox */
+  -webkit-box-flex:1.0; /* Safari and Chrome */
+  box-flex:1.0;
+  text-align: right;
+}
+.input-group .input {
+  -moz-box-flex:2.0; /* Firefox */
+  -webkit-box-flex:2.0; /* Safari and Chrome */
+  box-flex:2.0;
+}
