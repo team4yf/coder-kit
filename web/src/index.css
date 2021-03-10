@@ -11,6 +11,10 @@ html, body {
   margin: 0;
 }
 
+h1 {
+  font-size: 1.8em;
+}
+
 .header {
   height: 1em;
   background:rgb(28, 135, 177);
@@ -30,7 +34,6 @@ html, body {
   }
 }
 
-
 .input, .input:active, .text, .text:active {
   border: none;
   background: none;
@@ -38,6 +41,7 @@ html, body {
   border-bottom: 3px solid rgb(28, 135, 177);
   font: 1.2em;
   line-height: 1.5em;
+  padding: 0 .4em;
 }
 
 .text, .text:active{
@@ -66,9 +70,24 @@ html, body {
   font-weight: bold;
   line-height: 1.6em;
   height: 1.6em;
-  width: 33%;
+  width: 20%;
+  padding-right: .5em;
 }
 .input-group .input {
-  width: 66%;
+  width: 76%;
   display: block;
+}
+
+.margin-top-2 {
+  margin-top: 4em;
+}
+
+.title {
+  text-indent: 1em;
+  line-height: 2em;
+}
+
+.title-line {
+  background-color: #eff;
+  height: .5em;
 }

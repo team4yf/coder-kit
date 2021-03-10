@@ -5,9 +5,10 @@ export default () => {
   return (
     <div>
       <div className="header"></div>
+      <h1 className="title"> ⚒  🔩 ⚙ ⛓ 🔧  🔨 Coder Kits </h1>
       <div className="container">
-        <h2> Coder Kits </h2>
         <div className="">
+          <div className="margin-top-2"></div>
           <RegularExpress />
         </div>
       </div>
