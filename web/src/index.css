@@ -7,6 +7,8 @@ html, body {
 * {
   font-family: 'Courier New', Courier, monospace;
   font-size: 18px;
+  padding: 0;
+  margin: 0;
 }
 
 .header {
@@ -20,6 +22,7 @@ html, body {
 
 .container {
   margin: 1em auto;
+  max-width: 760px;
 }
 @media screen and (max-width: 1024px) {
   .container {
@@ -44,25 +47,28 @@ html, body {
 .box{
   display: -webkit-flex;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 .inline-box{
   display: inline-flex;
 }
 
 .item {
-  flex-grow: 0;
+  flex-grow: 1;
 }
 .input-group {
   margin: 1em;
 }
 .input-group .label{
-  -moz-box-flex:1.0; /* Firefox */
-  -webkit-box-flex:1.0; /* Safari and Chrome */
-  box-flex:1.0;
   text-align: right;
+  font-size: 0.8em;
+  font-weight: bold;
+  line-height: 1.6em;
+  height: 1.6em;
+  width: 33%;
 }
 .input-group .input {
-  -moz-box-flex:2.0; /* Firefox */
-  -webkit-box-flex:2.0; /* Safari and Chrome */
-  box-flex:2.0;
+  width: 66%;
+  display: block;
 }
