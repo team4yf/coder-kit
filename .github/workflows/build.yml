@@ -1,0 +1,28 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: ⚽ Build Image
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'web/src/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Dockerfile
+        uses: actions/checkout@v2
+      # 使用Docker官方制作的action
+      # https://github.com/marketplace/actions/build-and-push-docker-images
+      - name: Build and Push Docker Iamge
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKER_NAME }}
+          password: ${{ secrets.DOCKER_PASS }}
+          repository: yfsoftcom/coder-kit
+          tag_with_sha: true
