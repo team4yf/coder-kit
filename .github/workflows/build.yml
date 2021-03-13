@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v2
       # 使用Docker官方制作的action
       # https://github.com/marketplace/actions/build-and-push-docker-images
-      - name: Build and Push Docker Iamge
+      - name: Build and Push Docker Image
         uses: docker/build-push-action@v1
         with:
           username: ${{ secrets.DOCKER_NAME }}
