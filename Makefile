@@ -6,6 +6,7 @@ build-web:
 ssl:
 	docker run -it --rm \
 	-v $(BASE)/devops/ssl/certs:/etc/letsencrypt \
+	-v $(BASE)/devops/ssl/lib:/var/lib/letsencrypt \
 	-v $(BASE)/devops/html:/data/letsencrypt \
 	certbot/certbot \
 	certonly --webroot \
