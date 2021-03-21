@@ -9,6 +9,5 @@ services:
      - 443:443
     volumes:
      - ./devops/https/nginx/conf.d:/etc/nginx/conf.d
-    #  - ./devops/https/nginx/nginx.conf:/etc/nginx/nginx.conf
-     - ./devops/html:/usr/share/nginx/html
+     - ./devops/html:/var/www/certbot
      - ./devops/ssl/certs:/etc/letsencrypt
