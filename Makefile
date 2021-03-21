@@ -25,3 +25,11 @@ cert:
     --preferred-challenges http-01 --server https://acme-v02.api.letsencrypt.org/directory \
     --text --email yfsoftcom@126.com \
     -w /tmp/letsencrypt -d hk.yunplus.io
+
+shell:
+	docker run --rm --name temp_certbot -it \
+    -v $(BASE)/devops/ssl/certs:/etc/letsencrypt \
+    -v $(BASE)/devops/html:/tmp/letsencrypt \
+    -v $(BASE)/devops/ssl/log:/var/log \
+    certbot/certbot:v1.8.0 \
+	sh
