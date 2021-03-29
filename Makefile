@@ -4,7 +4,7 @@ build-web:
 	docker build -t yfsoftcom/coder-kit .
 
 ssl:
-	sudo docker run -it --rm \
+	docker run -it --rm \
 		-v $(BASE)/devops/ssl/certs:/etc/letsencrypt \
 		-v $(BASE)/devops/ssl/html:/data/letsencrypt \
 		certbot/certbot \
