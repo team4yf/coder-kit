@@ -8,6 +8,6 @@ services:
      - 80:80
      - 443:443
     volumes:
-     - ./devops/https/nginx/conf.d:/etc/nginx/conf.d
-     - ./devops/html:/usr/share/nginx/html
+     - ./devops/ssl/conf.d:/etc/nginx/conf.d
+     - ./devops/ssl/html:/usr/share/nginx/html
      - ./devops/ssl/certs:/etc/letsencrypt
