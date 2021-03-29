@@ -104,4 +104,4 @@ dist
 .tern-port
 
 ssl/html
-ssl/cert
+ssl/certs
