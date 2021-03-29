@@ -10,7 +10,7 @@ export default () => {
       <div className="title-line"></div>
       <div className="input-group box">
         <p className="label item">UUID: </p>
-        <input readonly className="input item" placeholder="uuid/v4"/>
+        <input readonly className="input item" placeholder="uuid/v4()"/>
       </div>
     </div>
   )

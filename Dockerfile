@@ -15,6 +15,6 @@ RUN npm run build
 
 # nginx serve the static
 FROM nginx:1.18.0-alpine
-RUN echo -e 'server {\n  listen       80;\n  location / {\n  root   /usr/share/nginx/html;\n  index  index.html index.htm;\n  try_files $uri $uri/ /index.html =404;\n  }\n}' >> /etc/nginx/conf.d/default.conf
+RUN echo -e 'server {\n  listen       80;\n  location / {\n  root   /usr/share/nginx/html;\n  index  index.html index.htm;\n  try_files $uri $uri/ /index.html =404;\n  }\n}' > /etc/nginx/conf.d/default.conf
 COPY --from=builder-web /app/build/ /usr/share/nginx/html/
 
