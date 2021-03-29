@@ -15,4 +15,4 @@ single-command:
 		certonly --webroot \
 		--email yfsoftcom@126.com --agree-tos --no-eff-email \
 		--webroot-path=/data/letsencrypt \
-		-d fan.yunplus.io -d yunplus.io
+		-d fan.yunplus.io
