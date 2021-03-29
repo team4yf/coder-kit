@@ -15,6 +15,6 @@ RUN npm run build
 
 # nginx serve the static
 FROM nginx:1.18.0-alpine
-
+RUN echo -e "server {\n server_name localhost;\n root /usr/share/nginx/html;\n index index.html index.htm;\n location / {\n try_files $uri $uri/ /index.html;\n }\n }" >> /etc/nginx/conf.d/localhost.conf
 COPY --from=builder-web /app/build/ /usr/share/nginx/html/
 

@@ -22,7 +22,7 @@ ReactDOM.render(
       <UUID />
     </Route>
     <Route exact path="/">
-      <RegularExpress />
+      <UUID />
     </Route>
   </App>
   </Switch>
