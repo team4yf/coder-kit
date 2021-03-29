@@ -13,6 +13,15 @@ ssl:
 		--webroot-path=/data/letsencrypt \
 		-d fan.yunplus.io
 
+renew:
+	docker run -it --rm \
+		-v $(BASE)/devops/ssl/certs:/etc/letsencrypt \
+		-v $(BASE)/devops/ssl/html:/data/letsencrypt \
+		certbot/certbot \
+		renew --webroot \
+		--webroot-path=/data/letsencrypt \
+		--quiet
+
 run:
 	docker-compose up -d
 
