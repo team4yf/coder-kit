@@ -13,13 +13,5 @@ ssl:
 		--webroot-path=/data/letsencrypt \
 		-d fan.yunplus.io
 
-cert:
-	docker run --rm --name temp_certbot \
-    -v $(BASE)/devops/ssl/certs:/etc/letsencrypt \
-    -v $(BASE)/devops/html:/tmp/letsencrypt \
-    -v $(BASE)/devops/ssl/log:/var/log \
-    certbot/certbot:v1.8.0 \
-    certonly --webroot --agree-tos --renew-by-default \
-    --preferred-challenges http-01 --server https://acme-v02.api.letsencrypt.org/directory \
-    --text --email yfsoftcom@126.com \
-    -w /tmp/letsencrypt -d hk.yunplus.io
+run:
+	docker-compose up -d
