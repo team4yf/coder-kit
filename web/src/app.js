@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import RegularExpress from './pages/regular';
 
-export default () => {
+export default (props) => {
   return (
     <div>
       <div className="header"></div>
@@ -9,7 +8,7 @@ export default () => {
       <div className="container">
         <div className="">
           <div className="margin-top-2"></div>
-          <RegularExpress />
+          {props.children}
         </div>
       </div>
       <div className="footer"></div>
