@@ -1,4 +1,4 @@
-BASE=$(shell dirname "$(PWD)")
+BASE=$(shell "$(PWD)")
 
 build-web:
 	docker build -t yfsoftcom/coder-kit .
