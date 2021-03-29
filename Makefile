@@ -15,3 +15,6 @@ ssl:
 
 run:
 	docker-compose up -d
+
+reload-nginx:
+	docker exec proxy nginx -s reload
