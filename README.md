@@ -21,3 +21,15 @@ some kit for coder.
 ### Front end
 
 - React
+
+
+## Devops
+
+### Github Action
+
+### Ansible
+
+#### Some command frequently
+
+- ansible -i devops/inventory.yaml all -m ping
+- ansible-playbook -i devops/inventory.yaml devops/playbook.yaml

@@ -1,0 +1,12 @@
+---
+
+- name: ls all the docker containers
+  hosts: local
+
+  tasks:
+  - name: Build image 
+    docker_image:
+      name: yfsoftcom/coder-kit
+      repository: yfsoftcom/coder-kit
+      tag: ansible
+      # push: yes
