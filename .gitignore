@@ -103,4 +103,7 @@ dist
 # TernJS port file
 .tern-port
 
-!.gitkeep
+ssl/html
+ssl/certs
+
+package-lock.json

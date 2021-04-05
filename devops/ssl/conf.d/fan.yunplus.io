@@ -1,10 +1,10 @@
 server {
   listen   80;
-  server_name   hk.yunplus.io;
+  server_name   fan.yunplus.io;
 
   location ~ /.well-known/acme-challenge/ {
     allow all;
-    root /var/www/certbot;
+    root /usr/share/nginx/html;
   }
 
   # root /usr/share/nginx/html;

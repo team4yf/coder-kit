@@ -1,13 +1,13 @@
 version: '3.0'
 services:
-  letsencrypt-nginx-container:
-    container_name: 'letsencrypt-nginx-container'
+  proxy:
+    container_name: proxy
     restart: always
     image: nginx:1.18.0-alpine
     ports:
      - 80:80
      - 443:443
     volumes:
-     - ./devops/https/nginx/conf.d:/etc/nginx/conf.d
-     - ./devops/html:/var/www/certbot
+     - ./devops/ssl/conf.d:/etc/nginx/conf.d
+     - ./devops/ssl/html:/usr/share/nginx/html
      - ./devops/ssl/certs:/etc/letsencrypt
