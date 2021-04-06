@@ -35,17 +35,9 @@ jobs:
 
       - name: update the container
         id: update_container
-        uses: dawidd6/action-ansible-playbook@v2
+        uses: saubermacherag/ansible-playbook-docker-action@v1.4
         with:
-          playbook: devops/site.yml
-          directory: ./
-          key: ${{secrets.FPM_PRIVATE_SSH_KEY}}
-          inventory: |
-            all:
-              children:
-                hk:
-                  hosts:
-                    hk.yunplus.io
-                  vars:
-                    ansible_ssh_user: root
-                    ansible_python_interpreter: /usr/bin/python3
+          playbookName: 'devops/site.yml'
+          inventoryFile: 'devops/inventory-server.yml'
+          keyFileVaultPass: ${{ secrets.KEYFILE_VAULT_PASS }}
+          extraVars: "-e fpmsshkey=${{secrets.FPM_PRIVATE_SSH_KEY}}"
