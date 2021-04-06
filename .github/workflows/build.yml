@@ -39,5 +39,4 @@ jobs:
         with:
           playbookName: 'devops/site.yml'
           inventoryFile: 'devops/inventory-server.yml'
-          keyFileVaultPass: ${{ secrets.KEYFILE_VAULT_PASS }}
-          extraVars: "-e fpmsshkey=${{secrets.FPM_PRIVATE_SSH_KEY}}"
+          keyFileVaultPass: ${{ secrets.FPM_PRIVATE_SSH_KEY }}
