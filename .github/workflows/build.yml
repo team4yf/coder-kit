@@ -35,22 +35,22 @@ jobs:
 
       - name: update the container
         id: update_container
-        uses: dawidd6/action-ansible-playbook@v2
-        with:
-          playbook: site.yml
-          directory: ./devops
-          key: ${{secrets.FPM_PRIVATE_SSH_KEY}}
-          inventory: |
-            all:
-              children:
-                hk:
-                  hosts:
-                    hk.yunplus.io
-                  vars:
-                    ansible_ssh_user: root
-                    ansible_python_interpreter: /usr/bin/python3
-        # uses: saubermacherag/ansible-playbook-docker-action@v1.4
+        # uses: dawidd6/action-ansible-playbook@v2
         # with:
-        #   playbookName: '/github/workspace/devops/site.yml'
-        #   inventoryFile: '/github/workspace/devops/inventory-server.yml'
-        #   keyFileVaultPass: ${{ secrets.FPM_PRIVATE_SSH_KEY }}
+        #   playbook: site.yaml
+        #   directory: ./devops
+        #   key: ${{secrets.FPM_PRIVATE_SSH_KEY}}
+        #   inventory: |
+        #     all:
+        #       children:
+        #         hk:
+        #           hosts:
+        #             hk.yunplus.io
+        #           vars:
+        #             ansible_ssh_user: root
+        #             ansible_python_interpreter: /usr/bin/python3
+        uses: saubermacherag/ansible-playbook-docker-action@v1.4
+        with:
+          playbookName: '/github/workspace/devops/site.yaml'
+          inventoryFile: '/github/workspace/devops/inventory-server.yaml'
+          keyFileVaultPass: ${{ secrets.FPM_PRIVATE_SSH_KEY }}
