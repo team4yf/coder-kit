@@ -37,6 +37,6 @@ jobs:
         id: update_container
         uses: saubermacherag/ansible-playbook-docker-action@v1.4
         with:
-          playbookName: 'devops/site.yml'
-          inventoryFile: 'devops/inventory-server.yml'
+          playbookName: '/github/workspace/devops/site.yml'
+          inventoryFile: '/github/workspace/devops/inventory-server.yml'
           keyFileVaultPass: ${{ secrets.FPM_PRIVATE_SSH_KEY }}
