@@ -32,3 +32,20 @@ jobs:
           tags: yfsoftcom/coder-kit:latest
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
+
+      - name: update the container
+        id: update_container
+        uses: dawidd6/action-ansible-playbook@v2
+        with:
+          playbook: devops/site.yml
+          directory: ./
+          key: ${{secrets.FPM_PRIVATE_SSH_KEY}}
+          inventory: |
+            all:
+              children:
+                hk:
+                  hosts:
+                    hk.yunplus.io
+                  vars:
+                    ansible_ssh_user: root
+                    ansible_python_interpreter: /usr/bin/python3

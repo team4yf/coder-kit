@@ -1,0 +1,31 @@
+---
+# more detail in the url: https://docs.ansible.com/ansible/2.8/modules/docker_container_module.html?highlight=docker
+- name: update the docker containers
+  hosts: hk
+  remote_user: root
+  tasks:
+  - name: pull image
+    docker_image:
+      name: yfsoftcom/coder-kit
+      tag: latest
+      source: pull
+  # - name: stop containers
+  #   docker_container:
+  #     name: coder-kit
+  #     state: stopped
+  # - name: remove containers
+  #   docker_container:
+  #     name: coder-kit
+  #     state: absent
+  - name: re-create containers
+    docker_container:
+      name: coder-kit
+      image: yfsoftcom/coder-kit:latest
+      # state: present
+      # recreate: yes
+      # restart: yes
+      ports:
+        - "18080:80"
+      env:
+        SECRET_KEY: "ssssh"
+        BOOLEAN_KEY: "yes"
