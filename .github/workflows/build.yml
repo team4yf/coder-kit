@@ -15,42 +15,42 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Dockerfile
-        uses: actions/checkout@v2
-      # 使用Docker官方制作的action
-      # https://github.com/marketplace/actions/build-and-push-docker-images
-      - name: Login to DockerHub
-        uses: docker/login-action@v1
-        with:
-          username: ${{ secrets.DOCKER_NAME }}
-          password: ${{ secrets.DOCKER_PASS }}
-      - name: Build and push
-        id: docker_build
-        uses: docker/build-push-action@v2
-        with:
-          push: true
-          tags: yfsoftcom/coder-kit:latest
-      - name: Image digest
-        run: echo ${{ steps.docker_build.outputs.digest }}
+      # - name: Checkout Dockerfile
+      #   uses: actions/checkout@v2
+      # # 使用Docker官方制作的action
+      # # https://github.com/marketplace/actions/build-and-push-docker-images
+      # - name: Login to DockerHub
+      #   uses: docker/login-action@v1
+      #   with:
+      #     username: ${{ secrets.DOCKER_NAME }}
+      #     password: ${{ secrets.DOCKER_PASS }}
+      # - name: Build and push
+      #   id: docker_build
+      #   uses: docker/build-push-action@v2
+      #   with:
+      #     push: true
+      #     tags: yfsoftcom/coder-kit:latest
+      # - name: Image digest
+      #   run: echo ${{ steps.docker_build.outputs.digest }}
 
       - name: update the container
         id: update_container
-        uses: dawidd6/action-ansible-playbook@v2
-        with:
-          playbook: site.yaml
-          directory: ./devops
-          key: ${{secrets.FPM_PRIVATE_SSH_KEY}}
-          inventory: |
-            all:
-              children:
-                hk:
-                  hosts:
-                    hk.yunplus.io
-                  vars:
-                    ansible_ssh_user: root
-                    ansible_python_interpreter: /usr/bin/python3
-        # uses: saubermacherag/ansible-playbook-docker-action@v1.4
+        # uses: dawidd6/action-ansible-playbook@v2
         # with:
-        #   playbookName: '/github/workspace/devops/site.yaml'
-        #   inventoryFile: '/github/workspace/devops/inventory-server.yaml'
-        #   keyFileVaultPass: ${{ secrets.FPM_PRIVATE_SSH_KEY }}
+        #   playbook: site.yaml
+        #   directory: ./devops
+        #   key: ${{secrets.FPM_PRIVATE_SSH_KEY}}
+        #   inventory: |
+        #     all:
+        #       children:
+        #         hk:
+        #           hosts:
+        #             hk.yunplus.io
+        #           vars:
+        #             ansible_ssh_user: root
+        #             ansible_python_interpreter: /usr/bin/python3
+        uses: saubermacherag/ansible-playbook-docker-action@v1.4
+        with:
+          playbookName: 'devops/site.yaml'
+          inventoryFile: 'devops/inventory-server.yaml'
+          keyFileVaultPass: ${{ secrets.FPM_PRIVATE_SSH_KEY_ENCRYPT }}
