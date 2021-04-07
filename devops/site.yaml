@@ -7,7 +7,7 @@
   - name: pull image
     docker_image:
       name: yfsoftcom/coder-kit
-      tag: latest
+      tag: "{{ tag }}"
       source: pull
       state: present
     register: pull

@@ -4,7 +4,7 @@ export default (props) => {
   return (
     <div>
       <div className="header"></div>
-      <h1 className="title"> ⚒  🔩 ⚙ ⛓ 🔧  🔨 Coder Kits (version: beta.01.5.13)</h1>
+      <h1 className="title"> ⚒  🔩 ⚙ ⛓ 🔧  🔨 Coder Kits (version: beta.01.5.14)</h1>
       <div className="container">
         <div className="">
           <div className="margin-top-2"></div>
