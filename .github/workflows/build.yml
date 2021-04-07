@@ -15,8 +15,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # - name: Checkout Dockerfile
-      #   uses: actions/checkout@v2
+      - name: Checkout Dockerfile
+        uses: actions/checkout@v2
       # # 使用Docker官方制作的action
       # # https://github.com/marketplace/actions/build-and-push-docker-images
       # - name: Login to DockerHub
@@ -51,6 +51,6 @@ jobs:
         #             ansible_python_interpreter: /usr/bin/python3
         uses: saubermacherag/ansible-playbook-docker-action@v1.4
         with:
-          playbookName: '/github/workspace/devops/site.yaml'
-          inventoryFile: '/github/workspace/devops/inventory-server.yaml'
+          playbookName: 'devops/site.yaml'
+          inventoryFile: 'devops/inventory-server.yaml'
           keyFileVaultPass: ${{ secrets.FPM_PRIVATE_SSH_KEY_ENCRYPT }}
