@@ -31,5 +31,5 @@ some kit for coder.
 
 #### Some command frequently
 
-- ansible -i devops/inventory.yaml all -m ping
-- ansible-playbook -i devops/inventory.yaml devops/playbook.yaml
+- ansible -i devops/inventory.yaml localhost -m ping
+- ansible-playbook -i devops/inventory.yaml devops/site-local.yaml
