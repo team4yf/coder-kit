@@ -40,4 +40,4 @@ jobs:
           playbookName: 'devops/site.yaml'
           inventoryFile: 'devops/inventory-server.yaml'
           keyFile: 'devops/ansible-deploy-encrypt.pem'
-          keyFileVaultPass: '{{ secret.FPM_PRIVATE_SSH_KEY_ENCRYPT }}'
+          keyFileVaultPass: ${{ secrets.FPM_PRIVATE_SSH_KEY_ENCRYPT }}
