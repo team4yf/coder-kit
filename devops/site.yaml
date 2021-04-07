@@ -18,7 +18,8 @@
   - name: re-create containers
     docker_container:
       name: coder-kit
-      image: yfsoftcom/coder-kit:latest
+      image: yfsoftcom/coder-kit
+      tag: "{{tag}}"
       # state: present
       recreate: yes
       # restart: yes
