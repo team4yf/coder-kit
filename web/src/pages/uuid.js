@@ -7,7 +7,7 @@ export default () => {
 
   useEffect(() => {
     setText(uuidv4());
-  });
+  }, []);
 
   return (
     <div className="page">
