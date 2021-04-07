@@ -53,4 +53,4 @@ jobs:
         with:
           playbookName: 'devops/site.yaml'
           inventoryFile: 'devops/inventory-server.yaml'
-          keyFile: 'devops/fpm.pem'
+          keyFile: 'devops/fpm.key'
