@@ -8,10 +8,13 @@
     docker_image:
       name: yfsoftcom/coder-kit
       tag: latest
+      source: pull
       state: present
     register: pull
+
   - name: checkout pull
     debug: var=pull
+
   - name: re-create containers
     docker_container:
       name: coder-kit
@@ -21,6 +24,7 @@
       # restart: yes
       ports:
         - "18080:80"
+        
     register: recreate
   - name: checkout recreate
     debug: var=recreate
