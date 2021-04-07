@@ -8,7 +8,7 @@
     docker_image:
       name: yfsoftcom/coder-kit
       tag: latest
-      source: pull
+      state: present
     register: pull
   - name: checkout pull
     debug: var=pull
@@ -17,7 +17,7 @@
       name: coder-kit
       image: yfsoftcom/coder-kit:latest
       # state: present
-      # recreate: yes
+      recreate: yes
       # restart: yes
       ports:
         - "18080:80"
