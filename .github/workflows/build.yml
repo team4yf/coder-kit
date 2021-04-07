@@ -51,6 +51,6 @@ jobs:
         #             ansible_python_interpreter: /usr/bin/python3
         uses: saubermacherag/ansible-playbook-docker-action@v1.4
         with:
-          playbookName: 'devops/site.yaml'
-          inventoryFile: 'devops/inventory-server.yaml'
+          playbookName: '/github/workspace/devops/site.yaml'
+          inventoryFile: '/github/workspace/devops/inventory-server.yaml'
           keyFileVaultPass: ${{ secrets.FPM_PRIVATE_SSH_KEY_ENCRYPT }}
