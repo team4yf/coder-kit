@@ -53,4 +53,4 @@ jobs:
         with:
           playbookName: 'devops/site.yaml'
           inventoryFile: 'devops/inventory-server.yaml'
-          keyFile: 'devops/ansible-deploy-encrypt.pem'
+          keyFile: 'devops/ansible-deploy.pem'
