@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import '../index.css';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -6,7 +6,7 @@ export default () => {
   const [ text, setText ] = useState('');
 
   useEffect(() => {
-    setText(v4());
+    setText(uuidv4());
   });
 
   return (
