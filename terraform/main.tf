@@ -16,13 +16,13 @@ provider "docker" {
 
 # Create a container
 resource "docker_container" "coder-kit" {
-  image = docker_image.coder-kit.latest
-  name  = "coder-kit"
-  restart = "always"
+  image    = docker_image.coder-kit.latest
+  name     = "coder-kit"
+  restart  = "always"
   must_run = true
   ports {
-     internal = 80
-     external = 18080
+    internal = 80
+    external = 18080
   }
 }
 
@@ -33,5 +33,5 @@ data "docker_registry_image" "coder-kit" {
 resource "docker_image" "coder-kit" {
   name          = data.docker_registry_image.coder-kit.name
   pull_triggers = [data.docker_registry_image.coder-kit.sha256_digest]
-  force_remove = true
+  force_remove  = true
 }
