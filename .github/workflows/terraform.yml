@@ -14,9 +14,14 @@ jobs:
         working-directory: ./terraform
     steps:
     - uses: actions/checkout@v2
-    - uses: webfactory/ssh-agent@v0.5.2
-      with:
-        ssh-private-key: ${{ secrets.HK_YUNPLUS_IO_SSH_KEY }}
+    - name: Create SSH key
+      run: |
+        mkdir -p ~/.ssh/
+        echo "$HK_YUNPLUS_IO_SSH_KEY" > ~/.ssh/id_rsa
+        sudo chmod 600 ~/.ssh/id_rsa
+      shell: bash
+      env:
+        HK_YUNPLUS_IO_SSH_KEY: ${{secrets.HK_YUNPLUS_IO_SSH_KEY}}
     - uses: hashicorp/setup-terraform@v1
 
     - name: Terraform fmt
