@@ -107,3 +107,8 @@ ssl/html
 ssl/certs
 
 package-lock.json
+
+.terraform
+
+terraform/*.tf?*
+terraform/*.lock*
