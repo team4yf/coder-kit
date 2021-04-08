@@ -18,10 +18,13 @@ jobs:
       run: |
         mkdir -p ~/.ssh/
         echo "$HK_YUNPLUS_IO_SSH_KEY" > ~/.ssh/id_rsa
+        echo "$HK_YUNPLUS_IO_SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
         sudo chmod 600 ~/.ssh/id_rsa
+        sudo chmod 600 ~/.ssh/known_hosts
       shell: bash
       env:
         HK_YUNPLUS_IO_SSH_KEY: ${{secrets.HK_YUNPLUS_IO_SSH_KEY}}
+        HK_YUNPLUS_IO_SSH_KNOWN_HOSTS: ${{secrets.HK_YUNPLUS_IO_SSH_KNOWN_HOSTS}}
     - uses: hashicorp/setup-terraform@v1
 
     - name: Terraform fmt
