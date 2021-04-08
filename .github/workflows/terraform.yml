@@ -17,6 +17,7 @@ jobs:
     - name: Create SSH key
       run: |
         mkdir -p ~/.ssh/
+        sudo chmod 700 ~/.ssh/
         echo "$HK_YUNPLUS_IO_SSH_KEY" > ~/.ssh/id_rsa
         echo "$HK_YUNPLUS_IO_SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
         sudo chmod 600 ~/.ssh/id_rsa
