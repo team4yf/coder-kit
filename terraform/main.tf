@@ -18,8 +18,9 @@ provider "docker" {
 resource "docker_container" "coder-kit" {
   image    = docker_image.coder-kit.latest
   name     = "coder-kit"
-  restart  = "always"
-  must_run = true
+  privileged = true
+
+  start = true
   ports {
     internal = 80
     external = 18080
