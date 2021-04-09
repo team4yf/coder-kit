@@ -16,11 +16,11 @@ provider "docker" {
 
 # Create a container
 resource "docker_container" "coder-kit" {
-  image    = docker_image.coder-kit.latest
-  name     = "coder-kit"
+  image      = docker_image.coder-kit.latest
+  name       = "coder-kit"
   privileged = true
-
-  start = true
+  restart    = "always"
+  start      = true
   ports {
     internal = 80
     external = 18080
