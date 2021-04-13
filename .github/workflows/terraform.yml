@@ -78,7 +78,7 @@ jobs:
       run: echo "apply => \n${{ steps.apply.outcome }}\n "
 
     - name: Terraform Cleanup
-      id: destory
-      run: terraform destory --auto-approve
+      id: destroy
+      run: terraform destroy --auto-approve
 
     
