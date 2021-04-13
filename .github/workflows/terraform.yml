@@ -74,5 +74,11 @@ jobs:
       id: apply
       run: terraform apply --auto-approve
 
-    - name: Show plan
-      run: echo "Plan => \n${{ steps.apply.outcome }}\n "
+    - name: Show apply
+      run: echo "apply => \n${{ steps.apply.outcome }}\n "
+
+    - name: Terraform Cleanup
+      id: destory
+      run: terraform destory --auto-approve
+
+    
