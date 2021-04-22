@@ -8,7 +8,7 @@ export default () => {
   useEffect(() => {
     setText(uuidv4());
   }, []);
-
+  
   return (
     <div className="page">
       <h2 className="title"> 🐢 The tool to generate a uuid. 🐢 </h2>
@@ -16,6 +16,11 @@ export default () => {
       <div className="input-group box">
         <p className="label item">UUID: </p>
         <input readonly className="input item" value={text} placeholder="uuid/v4()"/>
+      </div>
+      <div className="input-group box">
+        <button className="btn btn-default btn-primary" onClick={ () => {
+          setText(uuidv4());
+        }}> Renew </button>
       </div>
     </div>
   )

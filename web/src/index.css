@@ -91,3 +91,10 @@ h1 {
   background-color: #eff;
   height: .5em;
 }
+
+.btn {
+  height: 2em;
+  line-height: 2em;
+  font-size: 1.2em;
+  padding: 0 1em;
+}
