@@ -2,8 +2,8 @@ import { useState } from 'react';
 import '../index.css';
 
 export default () => {
-  const [ text, setText ] = useState('');
-  const [ express, setExpress ] = useState('');
+  // const [ text, setText ] = useState('');
+  // const [ express, setExpress ] = useState('');
 
   return (
     <div className="page">

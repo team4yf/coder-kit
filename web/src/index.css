@@ -16,9 +16,23 @@ h1 {
 }
 
 .header {
-  height: 1em;
+  height: .5em;
   background:rgb(28, 135, 177);
 }
+
+.top-bar ul, .top-bar li{
+  list-style: none;
+}
+
+.action-group a{
+  text-decoration: none;
+}
+
+.action-group a.active{
+  color: rgb(28, 135, 177);
+  text-decoration: underline;
+}
+
 
 .footer {
 
