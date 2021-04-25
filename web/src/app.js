@@ -11,6 +11,7 @@ export default (props) => {
         <ul className="top-bar action-group box">
           <li className="inline-box"><Link to="/">Coder Kits</Link></li>
           <li className="inline-box"><NavLink to="/uuid">UUID</NavLink></li>
+          <li className="inline-box"><NavLink to="/jsonFormat">JsonFormat</NavLink></li>
           <li className="inline-box"><NavLink to="/base64">Base64</NavLink></li>
           <li className="inline-box"><NavLink to="/about">About</NavLink></li>
         </ul>

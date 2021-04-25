@@ -11,6 +11,7 @@ import RegularExpress from './pages/regular';
 import UUID from './pages/uuid';
 import About from './pages/about';
 import Base64 from './pages/base64';
+import JsonFormat from './pages/jsonFormat';
 
 ReactDOM.render(
   <Router
@@ -19,6 +20,9 @@ ReactDOM.render(
    <App>
     <Route path="/regular">
       <RegularExpress />
+    </Route>
+    <Route path="/jsonFormat">
+      <JsonFormat/>
     </Route>
     <Route path="/uuid">
       <UUID />
