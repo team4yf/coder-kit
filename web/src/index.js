@@ -12,6 +12,7 @@ import UUID from './pages/uuid';
 import About from './pages/about';
 import Base64 from './pages/base64';
 import JsonFormat from './pages/jsonFormat';
+import Cron from './pages/cron';
 
 ReactDOM.render(
   <Router
@@ -20,6 +21,9 @@ ReactDOM.render(
    <App>
     <Route path="/regular">
       <RegularExpress />
+    </Route>
+    <Route path="/cron">
+      <Cron/>
     </Route>
     <Route path="/jsonFormat">
       <JsonFormat/>
