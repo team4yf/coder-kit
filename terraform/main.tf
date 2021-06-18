@@ -12,6 +12,7 @@ terraform {
       source = "hashicorp/null"
       version = "3.1.0"
     }
+    
   }
 }
 
@@ -42,6 +43,8 @@ terraform {
 #   force_remove  = true
 # }
 
+
+
 resource "null_resource" "test" {
   provisioner "remote-exec" {
     inline = [
@@ -58,3 +61,8 @@ resource "null_resource" "test" {
     }
   }
 }
+
+# module "ali-backend" {
+#   source = "./module/oss-backend"
+#   ots_instance = "yunjia-ots-2"
+# }
