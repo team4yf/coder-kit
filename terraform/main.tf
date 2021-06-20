@@ -8,12 +8,21 @@ terraform {
     #   version = "2.11.0"
     # }
 
+
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.0"
+    }
+
     null = {
       source = "hashicorp/null"
       version = "3.1.0"
     }
-    
   }
+}
+
+provider "aws" {
+  region = "us-east-1"
 }
 
 # provider "docker" {
@@ -45,24 +54,19 @@ terraform {
 
 
 
-resource "null_resource" "test" {
-  provisioner "remote-exec" {
-    inline = [
-      "cd /root/projects/coder-kit",
-      "git pull",
-      "docker pull yfsoftcom/coder-kit",
-      "docker stop coder-kit || true && docker rm coder-kit || true",
-      "docker run -p 18080:80 --restart=always --name coder-kit -d yfsoftcom/coder-kit",
-    ]
-    connection {
-      host = "hk.yunplus.io"
-      user     = "root"
-      private_key = "${file("~/.ssh/id_rsa")}"
-    }
-  }
-}
-
-# module "ali-backend" {
-#   source = "./module/oss-backend"
-#   ots_instance = "yunjia-ots-2"
+# resource "null_resource" "test" {
+#   provisioner "remote-exec" {
+#     inline = [
+#       "cd /root/projects/coder-kit",
+#       "git pull",
+#       "docker pull yfsoftcom/coder-kit",
+#       "docker stop coder-kit || true && docker rm coder-kit || true",
+#       "docker run -p 18080:80 --restart=always --name coder-kit -d yfsoftcom/coder-kit",
+#     ]
+#     connection {
+#       host = "hk.yunplus.io"
+#       user     = "root"
+#       private_key = "${file("~/.ssh/id_rsa")}"
+#     }
+#   }
 # }
