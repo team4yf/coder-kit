@@ -1,13 +1,12 @@
 
-name: ⚽ manual
+name: Auto run terraform
 
 on:
-  workflow_dispatch:
-    inputs:
-      rebuild:
-        description: 'Rebuild ?'
-        default: 'NO'
-        required: true
+  push:
+    branches:
+      - main
+    paths:
+      - 'web/src/**'
 env:
   tf_actions_working_dir: ./terraform
 
