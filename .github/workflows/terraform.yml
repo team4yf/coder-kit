@@ -34,20 +34,17 @@ jobs:
         HK_YUNPLUS_IO_SSH_KNOWN_HOSTS: ${{secrets.HK_YUNPLUS_IO_SSH_KNOWN_HOSTS}}
 
     - name: Login to DockerHub
-      if: ${{ github.event.inputs.rebuild == 'YES' }}
       uses: docker/login-action@v1
       with:
         username: ${{ secrets.DOCKER_NAME }}
         password: ${{ secrets.DOCKER_PASS }}
     - name: Build and push
-      if: ${{ github.event.inputs.rebuild == 'YES' }}
       id: docker_build
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: yfsoftcom/coder-kit:latest,yfsoftcom/coder-kit:${{ github.sha }}
+        tags: yfsoftcom/coder-kit:latest
     - name: Image digest
-      if: ${{ github.event.inputs.rebuild == 'YES' }}
       run: echo ${{ steps.docker_build.outputs.digest }}
 
     - uses: hashicorp/setup-terraform@v1
@@ -79,8 +76,8 @@ jobs:
     - name: Show apply
       run: echo "apply => \n${{ steps.apply.outcome }}\n "
 
-    - name: Terraform Cleanup
-      id: destroy
-      run: terraform destroy --auto-approve
+    # - name: Terraform Cleanup
+    #   id: destroy
+    #   run: terraform destroy --auto-approve
 
     
