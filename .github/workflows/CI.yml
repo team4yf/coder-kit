@@ -1,0 +1,27 @@
+
+name: CI
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'web/src/**'
+env:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js 12 
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12
+      run: cd web/ && npm config set registry https://registry.npmjs.org/ && npm i --silent && npm run build
+    - uses: manyuanrong/setup-ossutil@v2.0
+      with:
+        endpoint: "oss-cn-shanghai.aliyuncs.com"
+        access-key-id: ${{ secrets.ALICLOUD_ACCESS_KEY }}
+        access-key-secret: ${{ secrets.ALICLOUD_SECRET_KEY }}
+    - run: ossutil cp -rf build/* oss://bucket-website-blog-yunjiaiot-cn
+    
