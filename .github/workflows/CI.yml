@@ -4,8 +4,9 @@ on:
   push:
     branches:
       - main
-    # paths:
-    #   - 'web/src/**'
+    paths:
+      - 'web/src/**'
+      - 'web/public/**'
 env:
   CI: false
 jobs:
