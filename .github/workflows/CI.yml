@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'web/src/**'
+    # paths:
+    #   - 'web/src/**'
 env:
 
 jobs:
@@ -17,7 +17,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12
-      run: cd web/ && npm config set registry https://registry.npmjs.org/ && npm i --silent && npm run build
+    - run: cd web/ && npm config set registry https://registry.npmjs.org/ && npm i --silent && npm run build
     - uses: manyuanrong/setup-ossutil@v2.0
       with:
         endpoint: "oss-cn-shanghai.aliyuncs.com"
