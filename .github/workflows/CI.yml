@@ -4,9 +4,8 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'web/src/**'
-      - 'web/public/**'
+  pull_request:
+
 env:
   CI: false
   tf_actions_working_dir: ./devops
