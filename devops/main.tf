@@ -22,10 +22,6 @@ resource "alicloud_oss_bucket" "bucket-website" {
   }
 }
 
-# resource "alicloud_dns" "dns" {
-#   name = var.domain_name
-# }
-
 resource "alicloud_dns_record" "websites" {
   name = var.domain_name
   host_record = "foo2"
