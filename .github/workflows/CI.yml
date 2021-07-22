@@ -21,17 +21,19 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./devops
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js 14
       uses: actions/setup-node@v1
       with:
         node-version: 14
-    - run: cd web/ && yarn && yarn run build
+    - run: cd ../web/ && yarn && yarn run build
     - uses: hashicorp/setup-terraform@v1
       with:
         terraform_version: 1.0.1
-    - run: cd devops
     - name: Terraform fmt
       id: fmt
       run: terraform fmt -check
@@ -90,5 +92,5 @@ jobs:
         endpoint: "oss-cn-shanghai.aliyuncs.com"
         access-key-id: ${{ secrets.ALICLOUD_ACCESS_KEY }}
         access-key-secret: ${{ secrets.ALICLOUD_SECRET_KEY }}
-    - run: cd web/build && ossutil cp -rf . oss://bucket-website-foo2-yunjiaiot-cn
+    - run: cd ../web/build && ossutil cp -rf . oss://bucket-website-foo2-yunjiaiot-cn
     
