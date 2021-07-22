@@ -144,6 +144,6 @@ override.tf.json
 terraform.rc
 
 ossutil*
-.terraform*
+.terraform/
 .DS_Store
 .history
