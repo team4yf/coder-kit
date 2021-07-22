@@ -7,7 +7,7 @@ export default () => {
       <h2 className="title"> 🐢 About Me. 🐢 </h2>
       <div className="title-line"></div>
       <p>I'm a coder from JiangSu, happy hacking!</p>
-      <p> Version: 0.1.0.8 </p>
+      <p> Version: 0.1.0.9 </p>
     </div>
   )
 };
