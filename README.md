@@ -22,14 +22,8 @@ some kit for coder.
 
 - React
 
-
 ## Devops
 
 ### Github Action
 
-### Ansible
-
-#### Some command frequently
-
-- ansible -i devops/inventory.yaml localhost -m ping
-- ansible-playbook -i devops/inventory.yaml devops/site-local.yaml
+### Terraform
