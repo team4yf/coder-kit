@@ -146,3 +146,4 @@ terraform.rc
 ossutil*
 .terraform*
 .DS_Store
+.history
